@@ -1,0 +1,49 @@
+{
+  "name": "angular-schema-form-cloud-uploader",
+  "description": "Cloud uploader add-on for Angular Schema Form, using Angular File Upload.",
+  "main": [
+    "src/angularSchemaFormCloudUploader.js"
+  ],
+  "keywords": [
+    "angular-schema-form",
+    "angular-file-upload",
+    "schema-form",
+    "form",
+    "json",
+    "json-schema",
+    "schema",
+    "upload",
+    "file-upload",
+    "cloud",
+    "cloud-storage"
+  ],
+  "authors": [
+    "João Pedro Boavida"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jboavida/asf-cloud-uploader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jboavida/asf-cloud-uploader.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "demo",
+    "gulpfile.js",
+    "karma.conf.js",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "^1.6",
+    "angular-file-upload": "^2.1.2",
+    "angular-schema-form": "^0.8.9",
+    "angular-schema-form-bootstrap": "^0.1",
+    "bootstrap": "^3.1"
+  },
+  "devDependencies": {
+    "angular-aria": "^1.6.6",
+    "angular-mocks": "^1.6.6"
+  }
+}

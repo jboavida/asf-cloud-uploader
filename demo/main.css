@@ -1,0 +1,35 @@
+.debug .wrapper {
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.debug .wrapper > div > div {
+  padding: 0 25px;
+}
+
+.drop-zone {
+  border: 4px dashed lightgray;
+}
+
+.drop-zone::before {
+  content: 'Drop files here';
+  display: block;
+  text-align: center;
+}
+
+.drop-over {
+  background-color: lightgray;
+  border: 4px dashed gray;
+}
+
+.drop-zone.drop-over::before {
+  content: 'Files being dropped';
+}
+
+label.focus-within {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+  text-decoration: none;
+}

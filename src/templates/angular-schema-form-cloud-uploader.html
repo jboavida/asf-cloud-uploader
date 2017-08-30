@@ -1,0 +1,78 @@
+<fieldset class="form-group {{::form.htmlClass}}" ng-class="{
+  'has-feedback': form.feedback !== false,
+  'has-error': form.disableErrorState !== true && hasError(),
+  'has-success': form.disableSuccessState !== true && hasSuccess(),
+  'required': form.required === true
+}">
+  <legend class="control-label {{::form.labelHtmlClass}}"
+    ng-class="{ 'sr-only': !showTitle() }">{{form.title}}</legend>
+
+  <span ng-if="form.feedback !== false" ng-class="{
+      'glyphicon-ok': form.disableSuccessState !== true && hasSuccess(),
+      'glyphicon-remove': form.disableErrorState !== true && hasError()
+    }" class="form-control-feedback glyphicon" aria-hidden="true"></span>
+
+  <span class="help-block" sf-message="form.description"></span>
+
+  <div asf-cloud-uploader schema-validate="form" sf-changed="form"
+    sf-field-model>
+    <table ng-show="uploader.queue.length" class="{{::form.queueHtmlClass}}">
+      <tr ng-repeat="item in uploader.queue">
+        <td class="{{::form.queueItemNameHtmlClass}}"
+          nowrap>{{item.file.name}}</td>
+
+        <td>
+          <button class="{{::form.queueItemRemoveHtmlClass}}"
+            ng-click="item.remove(); updateModel()" ng-disabled="form.readonly">
+            <span ng-if="form.queueItemRemoveIcon"
+              class="{{::form.queueItemRemoveIcon}}"></span>
+            {{form.queueItemRemoveLabel}}
+          </button>
+        </td>
+
+        <td ng-if="uploader.isHTML5" width="100%">
+          <div class="progress" ng-style="{ 'margin': '1px 0 0' }">
+            <div class="{{::form.queueItemProgressHtmlClass}}"
+              ng-class="{ 'progress-bar-striped': item.isUploading }"
+              ng-style="{ width: item.progress + '%' }" role="progressbar"
+              aria-valuemin="0" aria-valuemax="100"
+              aria-valuenow="{{item.progress}}">
+              <span class="sr-only">{{item.progress}}% complete</span>
+            </div>
+          </div>
+        </td>
+
+        <td nowrap>
+          <span ng-if="form.feedback !== false"><span ng-class="{
+            'glyphicon-ok': form.disableSuccessState !== true && item.isSuccess,
+            'glyphicon-remove': form.disableErrorState !== true && item.isError
+          }" class="glyphicon" aria-hidden="true"></span>&nbsp;</span>
+          <span class="sr-only">
+            {{item.isSuccess ? '(uploaded)' : item.isError ? '(error)' : ''}}
+          </span>
+        </td>
+      </tr>
+    </table>
+
+    <div ng-if="form.readonly !== true && uploader.isHTML5"
+      class="{{::form.dropZoneHtmlClass}}" nv-file-drop nv-file-over
+      over-class="{{::form.dropOverHtmlClass}}" uploader="uploader"></div>
+
+    <label class="{{::form.fieldHtmlClass}}"
+      ng-class="{ '{{::form.fieldFocusHtmlClass}}' : state.focus }"
+      role="button" ng-disabled="form.readonly || !queueOpen()">
+      <span ng-if="form.selectIcon" class="{{::form.selectIcon}}"></span>
+      {{form.selectLabel}}
+      <input type="file" ng-disabled="form.readonly || !queueOpen()"
+        ng-blur="state.focus = false " ng-focus="state.focus = true"
+        nv-file-select uploader="uploader" class="sr-only" />
+    </label>
+
+    <div ng-if="form.triggerSubmit"
+      class="{{::form.triggerSubmitHtmlClass}}"><label>
+      <input ng-disabled="uploader.queue.length && !uploader.isUploading"
+        ng-model="state.triggerSubmit" type="checkbox" />
+      {{form.triggerSubmit}}
+    </label></div>
+  </div>
+</fieldset>

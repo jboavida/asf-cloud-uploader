@@ -16,5 +16,55 @@
   ],
   "author": "João Pedro Boavida",
   "license": "MIT",
+  "homepage": "https://github.com/jboavida/asf-cloud-uploader",
+  "bugs": {
+    "url": "https://github.com/jboavida/asf-cloud-uploader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jboavida/asf-cloud-uploader.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "eslint": "^4.5.0",
+    "eslint-plugin-angular": "^3.1.0",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-uglify": "^3.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha-reporter": "^2.2.4",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "streamqueue": "^1.1.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "jasmine": true,
+      "node": true
+    },
+    "extends": "plugin:angular/johnpapa",
+    "rules": {
+      "no-console": 1,
+      "no-unused-expressions": 2,
+      "no-unused-vars": 1
+    }
+  },
+  "scripts": {
+    "eslint": "eslint --ignore-path .gitignore '*/**/*.js'",
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "gulp",
+    "pretest": "npm install && npm run eslint",
+    "test": "karma start karma.conf.js"
+  }
 }
-
