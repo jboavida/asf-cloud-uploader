@@ -1,6 +1,6 @@
 {
   "name": "angular-schema-form-cloud-uploader",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cloud uploader add-on for Angular Schema Form, using Angular File Upload.",
   "keywords": [
     "Angular Schema Form",
