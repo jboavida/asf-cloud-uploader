@@ -129,7 +129,7 @@ The add-on can be installed from [npm](https://www.npmjs.com/), with
 ```
 $ npm install angular-schema-form-cloud-uploader
 ```
-which also invokes `bower install` if available.
+after which `bower install` installs (Bower) dependencies.
 
 To work with the package as a stand-alone, clone the repository:
 ```
@@ -151,6 +151,7 @@ The other form options (and their defaults) are:
   data: {},         // additional form fields (in upload POST)
   headers: {},      // headers (for upload POST)
   maxItems: Number.MAX_VALUE,   // maximum queue size
+  withCredentials: false,       // passed on to the uploader
 
   queueHtmlClass: 'table table-condensed table-striped',  // class for queue
   queueItemNameHtmlClass: '',                         // class for file name

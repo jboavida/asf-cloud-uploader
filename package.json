@@ -24,11 +24,12 @@
     "type": "git",
     "url": "https://github.com/jboavida/asf-cloud-uploader.git"
   },
+  "browser": "angular-schema-form-cloud-uploader.js",
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.8.0",
-    "eslint": "^4.5.0",
-    "eslint-plugin-angular": "^3.1.0",
+    "bower": "^1.8.2",
+    "eslint": "^4.7.2",
+    "eslint-plugin-angular": "^3.1.1",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.0.0",
@@ -39,7 +40,7 @@
     "gulp-server-livereload": "^1.9.2",
     "gulp-uglify": "^3.0.0",
     "jasmine-core": "^2.8.0",
-    "karma": "^1.7.0",
+    "karma": "^1.7.1",
     "karma-jasmine": "^1.1.0",
     "karma-mocha-reporter": "^2.2.4",
     "karma-ng-html2js-preprocessor": "^1.0.0",
@@ -61,7 +62,6 @@
   },
   "scripts": {
     "eslint": "eslint --ignore-path .gitignore '*/**/*.js'",
-    "postinstall": "bower install",
     "prestart": "npm install",
     "start": "gulp",
     "pretest": "npm install && npm run eslint",
